@@ -1,0 +1,136 @@
+/*
+Song & Poem are accredited to Dan Salvato of https://ddlc.moe
+Everything else is licensed under WTFPLv2, available at smol.fi/license.txt
+*/
+
+@font-face {
+	font-family: 'Hashtag';
+	src: url('../font/Hashtag.ttf');
+}
+
+html, body {
+	margin: 0;
+	background-color: #343434;
+	background-image: url("../img/sayori.png");
+	background-repeat: no-repeat;
+	background-position: 90% top;
+	background-attachment: fixed;
+	background-size: auto 100%;
+	overflow: hidden;
+}
+
+p.title {
+	white-space: nowrap;
+	font-family: 'Hashtag', sans-serif;
+	font-size: 166%;
+	color: rgba(200,50,50,1);
+	text-anchor: left;
+	max-height: 2.5vh;
+}
+
+div#confusion {
+	position: absolute;
+	float: right;
+	right: 5%;
+	bottom: 5%;
+	z-index: 10;
+}
+
+p.plug {
+	font-family: 'Hashtag', sans-serif;
+	font-size: 166%;
+	color: rgb(255,255,255);
+}
+
+a.ddlc {
+	font-family: inherit;
+	font-size: inherit;
+	color: rgb(200,50,50);
+	text-decoration: none;
+}
+
+#sperg {
+	margin-top: 5vh;
+	margin-left: 5%;
+}
+
+div#nocontrol {
+	position:fixed;
+	right: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+#nocontrol::before {
+	content: "";
+	position: absolute;
+	width:  100%;
+	height: 200%;
+	top:   -100%;
+	left:     0;
+
+	background: repeating-linear-gradient(to bottom,
+		transparent 0%,
+		rgba(0,0,0,0.1) 4%,
+		transparent 8%);
+/*
+	background: repeating-linear-gradient(to bottom,
+		transparent 0%,
+		rgba(50,255,50,0.1) 4%,
+		transparent 8%); */
+
+		animation-name: fudge;
+		animation-duration: 2.5s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+		// animation-direction: reverse;
+		animation-timing-function: ease-in-out;
+		animation-direction: alternate;
+	}
+
+
+	#nocontrol::after {
+		content: "";
+		position: absolute;
+		width:  100%;
+		height: 200%;
+		top:   -100%;
+		left:     0;
+
+		background: linear-gradient(to bottom,
+			transparent 0%,
+			rgba(255,255,255, 0.1) 0.75%,
+			transparent 1.25%,
+			transparent 40%,
+			rgba(255,255,255, 0.2) 50.75%,
+			transparent 51.25%
+			);
+
+		animation-name: scanline;
+		animation-duration: 30s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+
+
+	@keyframes fudge {
+		from { transform: translate(0px, 0px);  }
+		to   { transform: translate(0px, 3%); }
+	}
+
+	@keyframes scanline {
+		from { transform: translate(0px, 0px);  }
+		to   { transform: translate(0px, 70%); }
+	}
+
+	@media screen and (max-width: 600px) {
+
+	html, body {
+		background-color: #d8d8d8;
+		background-image: url("../img/sayo-nara.gif");
+		background-size: 100%;
+		background-position: top;
+	}
+
+	}
